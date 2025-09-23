@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 80" width="150" height="80">
+  <rect width="150" height="80" fill="#ffffff" rx="4"/>
+  <rect x="20" y="20" width="110" height="40" fill="#1e40af" rx="4"/>
+  <text x="75" y="45" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="18" font-weight="bold">YALE</text>
+  <rect x="30" y="30" width="15" height="20" fill="#f7941e" rx="2"/>
+  <rect x="105" y="30" width="15" height="20" fill="#f7941e" rx="2"/>
+  <rect x="67" y="25" width="16" height="8" fill="#f7941e" rx="2"/>
+</svg>

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 80" width="150" height="80">
+  <rect width="150" height="80" fill="#ffffff" rx="4"/>
+  <circle cx="75" cy="40" r="30" fill="#e53e3e"/>
+  <text x="75" y="35" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="10" font-weight="bold">INTERNATIONAL</text>
+  <text x="75" y="48" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="8">TRUCKS</text>
+  <rect x="55" y="20" width="40" height="8" fill="#ffffff" rx="4"/>
+</svg>

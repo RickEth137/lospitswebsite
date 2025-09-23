@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+  <!-- Background -->
+  <rect width="800" height="600" fill="#f7fafc"/>
+  
+  <!-- Window Frame -->
+  <rect x="50" y="50" width="700" height="500" fill="#ffffff" stroke="#e2e8f0" stroke-width="2" rx="8"/>
+  
+  <!-- Header Bar -->
+  <rect x="50" y="50" width="700" height="60" fill="#1a365d" rx="8 8 0 0"/>
+  
+  <!-- Header Elements -->
+  <circle cx="80" cy="80" r="8" fill="#f56565"/>
+  <circle cx="110" cy="80" r="8" fill="#f7941e"/>
+  <circle cx="140" cy="80" r="8" fill="#48bb78"/>
+  
+  <text x="200" y="85" fill="#ffffff" font-family="Arial, sans-serif" font-size="16" font-weight="bold">Sistema de Gestión LOS PITS</text>
+  
+  <!-- Navigation Menu -->
+  <rect x="70" y="130" width="120" height="30" fill="#2d3748" rx="4"/>
+  <text x="130" y="150" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="12">Dashboard</text>
+  
+  <rect x="210" y="130" width="120" height="30" fill="#e2e8f0" rx="4"/>
+  <text x="270" y="150" text-anchor="middle" fill="#4a5568" font-family="Arial, sans-serif" font-size="12">Flotilla</text>
+  
+  <rect x="350" y="130" width="120" height="30" fill="#e2e8f0" rx="4"/>
+  <text x="410" y="150" text-anchor="middle" fill="#4a5568" font-family="Arial, sans-serif" font-size="12">Servicios</text>
+  
+  <rect x="490" y="130" width="120" height="30" fill="#e2e8f0" rx="4"/>
+  <text x="550" y="150" text-anchor="middle" fill="#4a5568" font-family="Arial, sans-serif" font-size="12">Reportes</text>
+  
+  <!-- Main Content Area -->
+  <rect x="70" y="180" width="660" height="350" fill="#ffffff" stroke="#e2e8f0" stroke-width="1" rx="4"/>
+  
+  <!-- Cards/Widgets -->
+  <rect x="90" y="200" width="150" height="100" fill="#f7941e" rx="8"/>
+  <text x="165" y="230" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="24" font-weight="bold">156</text>
+  <text x="165" y="250" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="12">Servicios Activos</text>
+  <text x="165" y="280" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="10">+12% este mes</text>
+  
+  <rect x="260" y="200" width="150" height="100" fill="#48bb78" rx="8"/>
+  <text x="335" y="230" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="24" font-weight="bold">98%</text>
+  <text x="335" y="250" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="12">Disponibilidad</text>
+  <text x="335" y="280" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="10">Objetivo: 95%</text>
+  
+  <rect x="430" y="200" width="150" height="100" fill="#4299e1" rx="8"/>
+  <text x="505" y="230" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="24" font-weight="bold">23</text>
+  <text x="505" y="250" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="12">Unidades Taller</text>
+  <text x="505" y="280" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="10">Tiempo promedio: 2.3h</text>
+  
+  <rect x="600" y="200" width="110" height="100" fill="#e53e3e" rx="8"/>
+  <text x="655" y="230" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="24" font-weight="bold">4</text>
+  <text x="655" y="250" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="12">Alertas</text>
+  <text x="655" y="280" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="10">Requieren atención</text>
+  
+  <!-- Table Header -->
+  <rect x="90" y="330" width="620" height="30" fill="#f7fafc"/>
+  <text x="110" y="350" fill="#4a5568" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Unidad</text>
+  <text x="250" y="350" fill="#4a5568" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Estado</text>
+  <text x="350" y="350" fill="#4a5568" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Próximo Servicio</text>
+  <text x="500" y="350" fill="#4a5568" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Técnico</text>
+  <text x="650" y="350" fill="#4a5568" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Acción</text>
+  
+  <!-- Table Rows -->
+  <g fill="#718096" font-family="Arial, sans-serif" font-size="11">
+    <text x="110" y="380">CAM-001</text>
+    <text x="250" y="380" fill="#48bb78">Operativo</text>
+    <text x="350" y="380">15/Oct/2024</text>
+    <text x="500" y="380">Juan Pérez</text>
+    
+    <text x="110" y="400">VAN-045</text>
+    <text x="250" y="400" fill="#f7941e">En Servicio</text>
+    <text x="350" y="380">22/Oct/2024</text>
+    <text x="500" y="400">María López</text>
+    
+    <text x="110" y="420">MON-012</text>
+    <text x="250" y="420" fill="#e53e3e">Mantenimiento</text>
+    <text x="350" y="420">28/Oct/2024</text>
+    <text x="500" y="420">Carlos Ruiz</text>
+  </g>
+  
+  <!-- Action Buttons -->
+  <rect x="630" y="370" width="60" height="20" fill="#f7941e" rx="3"/>
+  <text x="660" y="383" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="9">Ver Detalles</text>
+  
+  <rect x="630" y="390" width="60" height="20" fill="#4299e1" rx="3"/>
+  <text x="660" y="403" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="9">Programar</text>
+  
+  <rect x="630" y="410" width="60" height="20" fill="#48bb78" rx="3"/>
+  <text x="660" y="423" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="9">Completar</text>
+</svg>

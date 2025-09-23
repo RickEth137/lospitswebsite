@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 80" width="150" height="80">
+  <rect width="150" height="80" fill="#ffffff" rx="4"/>
+  <rect x="15" y="25" width="120" height="30" fill="#dc2626" rx="4"/>
+  <text x="75" y="45" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="14" font-weight="bold">KENWORTH</text>
+  <polygon points="75,20 85,30 75,35 65,30" fill="#f7941e"/>
+  <rect x="30" y="35" width="90" height="4" fill="#f7941e" rx="2"/>
+</svg>
