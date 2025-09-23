@@ -595,12 +595,16 @@ document.head.appendChild(notificationStyles);
         customerServiceForm?.addEventListener('submit', handleCustomerServiceForm);
 
         function openModal() {
+            modal.style.display = 'flex';
             modal.classList.add('active');
             document.body.style.overflow = 'hidden';
         }
 
         function closeModal() {
             modal.classList.remove('active');
+            setTimeout(() => {
+                modal.style.display = 'none';
+            }, 300); // Wait for transition to complete
             document.body.style.overflow = '';
         }
 

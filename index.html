@@ -370,22 +370,26 @@
                     </div>
                 </div>
                 
-                <form class="contact__form" id="contact-form">
+                <form class="contact__form" action="https://formspree.io/f/xovkqdkg" method="POST">
                     <div class="form__group">
-                        <input type="text" id="name" name="name" class="form__input" placeholder="Nombre completo" required>
+                        <input type="text" name="name" class="form__input" placeholder="Nombre completo" required>
                     </div>
                     
                     <div class="form__group">
-                        <input type="email" id="email" name="email" class="form__input" placeholder="Correo electrónico" required>
+                        <input type="email" name="email" class="form__input" placeholder="Correo electrónico" required>
                     </div>
                     
                     <div class="form__group">
-                        <input type="tel" id="phone" name="phone" class="form__input" placeholder="Teléfono">
+                        <input type="tel" name="phone" class="form__input" placeholder="Teléfono">
                     </div>
                     
                     <div class="form__group">
-                        <textarea id="message" name="message" class="form__textarea" placeholder="Cuéntanos sobre tu flotilla y necesidades" rows="5" required></textarea>
+                        <textarea name="message" class="form__textarea" placeholder="Cuéntanos sobre tu flotilla y necesidades" rows="5" required></textarea>
                     </div>
+                    
+                    <!-- Hidden field to identify form source -->
+                    <input type="hidden" name="_subject" value="Nuevo contacto desde página web - Los Pits">
+                    <input type="hidden" name="form_type" value="contacto_principal">
                     
                     <button type="submit" class="btn btn--primary form__submit">
                         Enviar Información
@@ -436,7 +440,7 @@
     </footer>
 
     <!-- Customer Service Modal -->
-    <div class="modal" id="customer-service-modal">
+    <div class="modal" id="customer-service-modal" style="display: none !important;">
         <div class="modal__overlay">
             <div class="modal__content">
                 <button class="modal__close" id="modal-close">
@@ -446,22 +450,26 @@
                 <h3 class="modal__title">Atención a Clientes</h3>
                 <p class="modal__subtitle">Cuéntanos cómo podemos ayudarte</p>
                 
-                <form class="modal__form" id="customer-service-form">
+                <form class="modal__form" action="https://formspree.io/f/xovkqdkg" method="POST">
                     <div class="form__group">
-                        <input type="text" id="cs-name" name="name" class="form__input" placeholder="Nombre completo" required>
+                        <input type="text" name="name" class="form__input" placeholder="Nombre completo" required>
                     </div>
                     
                     <div class="form__group">
-                        <input type="email" id="cs-email" name="email" class="form__input" placeholder="Correo electrónico" required>
+                        <input type="email" name="email" class="form__input" placeholder="Correo electrónico" required>
                     </div>
                     
                     <div class="form__group">
-                        <input type="tel" id="cs-phone" name="phone" class="form__input" placeholder="Teléfono">
+                        <input type="tel" name="phone" class="form__input" placeholder="Teléfono">
                     </div>
                     
                     <div class="form__group">
-                        <textarea id="cs-message" name="message" class="form__textarea" placeholder="Cuéntanos sobre tu flotilla y necesidades" rows="5" required></textarea>
+                        <textarea name="message" class="form__textarea" placeholder="Cuéntanos sobre tu flotilla y necesidades" rows="5" required></textarea>
                     </div>
+                    
+                    <!-- Hidden fields to identify form source -->
+                    <input type="hidden" name="_subject" value="Atención a Clientes - Los Pits">
+                    <input type="hidden" name="form_type" value="atencion_clientes">
                     
                     <button type="submit" class="btn btn--primary form__submit">
                         Enviar Información
