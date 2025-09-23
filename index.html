@@ -42,6 +42,9 @@
                 <li class="nav__item">
                     <a href="#contacto" class="nav__link">Contacto</a>
                 </li>
+                <li class="nav__item">
+                    <a href="#" class="nav__link" id="customer-service-btn">Atención a clientes</a>
+                </li>
             </ul>
 
             <a href="#contacto" class="btn btn--primary nav__cta">Cotizar Servicio</a>
@@ -57,7 +60,7 @@
         <div class="hero__bg" data-parallax="0.5"></div>
         <div class="hero__overlay"></div>
         <div class="hero__fists">
-            <img src="Fists.png" alt="Fists" />
+            <img src="fistfix.png" alt="Fists" />
         </div>
         <div class="hero__content">
             <h1 class="hero__title">
@@ -431,6 +434,43 @@
             </div>
         </div>
     </footer>
+
+    <!-- Customer Service Modal -->
+    <div class="modal" id="customer-service-modal">
+        <div class="modal__overlay">
+            <div class="modal__content">
+                <button class="modal__close" id="modal-close">
+                    <i class="fas fa-times"></i>
+                </button>
+                
+                <h3 class="modal__title">Atención a Clientes</h3>
+                <p class="modal__subtitle">Cuéntanos cómo podemos ayudarte</p>
+                
+                <form class="modal__form" id="customer-service-form">
+                    <div class="form__group">
+                        <input type="text" id="cs-name" name="name" class="form__input" placeholder="Nombre completo" required>
+                    </div>
+                    
+                    <div class="form__group">
+                        <input type="email" id="cs-email" name="email" class="form__input" placeholder="Correo electrónico" required>
+                    </div>
+                    
+                    <div class="form__group">
+                        <input type="tel" id="cs-phone" name="phone" class="form__input" placeholder="Teléfono">
+                    </div>
+                    
+                    <div class="form__group">
+                        <textarea id="cs-message" name="message" class="form__textarea" placeholder="Cuéntanos sobre tu flotilla y necesidades" rows="5" required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn btn--primary form__submit">
+                        Enviar Información
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>

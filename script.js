@@ -557,3 +557,74 @@ notificationStyles.textContent = `
 `;
 
 document.head.appendChild(notificationStyles);
+
+    // Customer Service Modal Functionality
+    function setupCustomerServiceModal() {
+        const customerServiceBtn = document.getElementById('customer-service-btn');
+        const modal = document.getElementById('customer-service-modal');
+        const modalClose = document.getElementById('modal-close');
+        const modalOverlay = modal?.querySelector('.modal__overlay');
+        const customerServiceForm = document.getElementById('customer-service-form');
+
+        if (!customerServiceBtn || !modal) return;
+
+        // Open modal
+        customerServiceBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            openModal();
+        });
+
+        // Close modal
+        modalClose?.addEventListener('click', closeModal);
+        
+        // Close modal when clicking overlay
+        modalOverlay?.addEventListener('click', (e) => {
+            if (e.target === modalOverlay) {
+                closeModal();
+            }
+        });
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && modal.classList.contains('active')) {
+                closeModal();
+            }
+        });
+
+        // Handle form submission
+        customerServiceForm?.addEventListener('submit', handleCustomerServiceForm);
+
+        function openModal() {
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        function handleCustomerServiceForm(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(customerServiceForm);
+            const data = {
+                name: formData.get('name'),
+                email: formData.get('email'),
+                phone: formData.get('phone'),
+                message: formData.get('message')
+            };
+
+            // Show success notification
+            showNotification('¡Mensaje enviado exitosamente! Nos pondremos en contacto contigo pronto.', 'success');
+            
+            // Reset form and close modal
+            customerServiceForm.reset();
+            closeModal();
+
+            console.log('Customer service form data:', data);
+        }
+    }
+
+    // Initialize customer service modal
+    setupCustomerServiceModal();
