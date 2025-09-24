@@ -278,6 +278,11 @@ img {
     transform: translateX(-50%);
 }
 
+/* Hide mobile-only nav items on desktop */
+.nav__item--mobile-only {
+    display: none;
+}
+
 .nav__link:hover {
     color: var(--white);
     background: transparent;
@@ -1330,6 +1335,11 @@ img {
     
     .nav__menu.show {
         right: 0;
+    }
+    
+    /* Show mobile-only nav items on mobile */
+    .nav__item--mobile-only {
+        display: block;
     }
     
     .nav__link {

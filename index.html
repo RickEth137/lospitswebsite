@@ -45,9 +45,12 @@
                 <li class="nav__item">
                     <a href="#" class="nav__link" id="customer-service-btn">Atención a clientes</a>
                 </li>
+                <li class="nav__item nav__item--mobile-only">
+                    <a href="#" class="nav__link" id="job-application-btn-mobile">Bolsa de Trabajo</a>
+                </li>
             </ul>
 
-            <a href="#contacto" class="btn btn--primary nav__cta">Cotizar Servicio</a>
+            <a href="#" class="btn btn--primary nav__cta" id="job-application-btn">Bolsa de Trabajo</a>
             
             <div class="nav__toggle" id="nav-toggle">
                 <i class="fas fa-bars"></i>
@@ -353,7 +356,7 @@
                     <div class="contact__details">
                         <div class="contact__detail">
                             <i class="fas fa-map-marker-alt"></i>
-                            <span>Calle 36 Nº 2712, Zona Industrial, Guadalajara, Jalisco, México</span>
+                            <span>Calle 36 Nº 2797, Zona Industrial, Guadalajara, Jalisco, México</span>
                         </div>
                         <div class="contact__detail">
                             <i class="fas fa-phone"></i>
@@ -370,7 +373,7 @@
                     </div>
                 </div>
                 
-                <form class="contact__form" action="https://formspree.io/f/xovkqdkg" method="POST">
+                <form class="contact__form" action="https://formspree.io/f/mdkwoqry" method="POST">
                     <div class="form__group">
                         <input type="text" name="name" class="form__input" placeholder="Nombre completo" required>
                     </div>
@@ -422,7 +425,7 @@
                 
                 <div class="footer__contact">
                     <div class="footer__contact-info">
-                        <p><i class="fas fa-map-marker-alt"></i> Calle 36 Nº 2712, Zona Industrial, Guadalajara, Jalisco, México</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Calle 36 Nº 2797, Zona Industrial, Guadalajara, Jalisco, México</p>
                         <p><i class="fas fa-phone"></i> 333 145 3137</p>
                         <p><i class="fas fa-envelope"></i> administracion@mantenimiento.in</p>
                         <p><i class="fas fa-user-tie"></i> Correo de reclutamiento: reclutamiento@mantenimiento.in</p>
@@ -450,7 +453,7 @@
                 <h3 class="modal__title">Atención a Clientes</h3>
                 <p class="modal__subtitle">Cuéntanos cómo podemos ayudarte</p>
                 
-                <form class="modal__form" action="https://formspree.io/f/xovkqdkg" method="POST">
+                <form class="modal__form" action="https://formspree.io/f/mdkwoqry" method="POST">
                     <div class="form__group">
                         <input type="text" name="name" class="form__input" placeholder="Nombre completo" required>
                     </div>
@@ -464,12 +467,53 @@
                     </div>
                     
                     <div class="form__group">
-                        <textarea name="message" class="form__textarea" placeholder="Cuéntanos sobre tu flotilla y necesidades" rows="5" required></textarea>
+                        <textarea name="message" class="form__textarea" placeholder="En que podemos ayudarte" rows="5" required></textarea>
                     </div>
                     
                     <!-- Hidden fields to identify form source -->
                     <input type="hidden" name="_subject" value="Atención a Clientes - Los Pits">
                     <input type="hidden" name="form_type" value="atencion_clientes">
+                    
+                    <button type="submit" class="btn btn--primary form__submit">
+                        Enviar Información
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Job Application Modal -->
+    <div class="modal" id="job-application-modal" style="display: none;">
+        <div class="modal__overlay" id="job-modal-overlay">
+            <div class="modal__content">
+                <button class="modal__close" id="job-modal-close">
+                    <i class="fas fa-times"></i>
+                </button>
+                
+                <h3 class="modal__title">Únete a nuestro Equipo</h3>
+                <p class="modal__subtitle">Cuéntanos sobre ti</p>
+                
+                <form class="modal__form" action="https://formspree.io/f/xzzjbnln" method="POST">
+                    <div class="form__group">
+                        <input type="text" name="name" class="form__input" placeholder="Nombre completo" required>
+                    </div>
+                    
+                    <div class="form__group">
+                        <input type="email" name="email" class="form__input" placeholder="Correo electrónico" required>
+                    </div>
+                    
+                    <div class="form__group">
+                        <input type="tel" name="phone" class="form__input" placeholder="Teléfono">
+                    </div>
+                    
+                    <div class="form__group">
+                        <textarea name="message" class="form__textarea" placeholder="Cuéntanos sobre ti" rows="5" required></textarea>
+                    </div>
+                    
+                    <!-- Hidden fields to identify form source -->
+                    <input type="hidden" name="_subject" value="Solicitud de Empleo - Los Pits">
+                    <input type="hidden" name="form_type" value="bolsa_trabajo">
                     
                     <button type="submit" class="btn btn--primary form__submit">
                         Enviar Información

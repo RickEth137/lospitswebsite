@@ -632,3 +632,71 @@ document.head.appendChild(notificationStyles);
 
     // Initialize customer service modal
     setupCustomerServiceModal();
+
+    // Job Application Modal Functionality
+    function setupJobApplicationModal() {
+        const jobApplicationBtn = document.getElementById('job-application-btn');
+        const jobApplicationBtnMobile = document.getElementById('job-application-btn-mobile');
+        const modal = document.getElementById('job-application-modal');
+        const modalClose = document.getElementById('job-modal-close');
+        const modalOverlay = modal?.querySelector('.modal__overlay');
+
+        if (!modal) return;
+
+        // Open modal - Desktop button
+        if (jobApplicationBtn) {
+            jobApplicationBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                openJobModal();
+            });
+        }
+
+        // Open modal - Mobile button
+        if (jobApplicationBtnMobile) {
+            jobApplicationBtnMobile.addEventListener('click', (e) => {
+                e.preventDefault();
+                openJobModal();
+                // Close mobile menu
+                const navMenu = document.getElementById('nav-menu');
+                const navToggle = document.getElementById('nav-toggle');
+                if (navMenu && navToggle) {
+                    navMenu.classList.remove('active');
+                    navToggle.classList.remove('active');
+                }
+            });
+        }
+
+        // Close modal
+        modalClose?.addEventListener('click', closeJobModal);
+        
+        // Close modal when clicking overlay
+        modalOverlay?.addEventListener('click', (e) => {
+            if (e.target === modalOverlay) {
+                closeJobModal();
+            }
+        });
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && modal.classList.contains('active')) {
+                closeJobModal();
+            }
+        });
+
+        function openJobModal() {
+            modal.style.display = 'flex';
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeJobModal() {
+            modal.classList.remove('active');
+            setTimeout(() => {
+                modal.style.display = 'none';
+            }, 300); // Wait for transition to complete
+            document.body.style.overflow = '';
+        }
+    }
+
+    // Initialize job application modal
+    setupJobApplicationModal();
