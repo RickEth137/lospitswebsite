@@ -89,11 +89,17 @@ document.addEventListener('DOMContentLoaded', function() {
     function setupSmoothScrolling() {
         navLinks.forEach(link => {
             link.addEventListener('click', (e) => {
-                e.preventDefault();
-                
                 const targetId = link.getAttribute('href');
+
+                // Only handle in-page anchor links; let real page links navigate normally
+                if (!targetId || !targetId.startsWith('#')) {
+                    return;
+                }
+
+                e.preventDefault();
+
                 const targetSection = document.querySelector(targetId);
-                
+
                 if (targetSection) {
                     const headerHeight = header.offsetHeight;
                     const targetPosition = targetSection.offsetTop - headerHeight;

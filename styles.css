@@ -1952,3 +1952,188 @@ img {
         font-size: var(--font-size-lg);
     }
 }
+/* ========================================================================
+   Policies Page (politicas.html)
+   ======================================================================== */
+
+/* Active nav link – persistent accent underline */
+.nav__link--active {
+    color: var(--white);
+}
+.nav__link--active::after {
+    width: 80%;
+}
+
+/* Solid header for inner pages (no hero behind it) */
+.header--solid {
+    background: rgba(28, 28, 30, 0.98);
+}
+
+/* Layout wrapper */
+.page-policies {
+    background: var(--light-gray);
+}
+
+.policies {
+    /* Clear the fixed header */
+    padding-top: calc(72px + var(--spacing-3xl));
+    padding-bottom: var(--spacing-3xl);
+    min-height: 100vh;
+    background:
+        radial-gradient(1200px 500px at 50% -10%, rgba(0, 122, 255, 0.10), transparent 70%),
+        var(--light-gray);
+}
+
+/* Page heading */
+.policies__header {
+    text-align: center;
+    max-width: 720px;
+    margin: 0 auto var(--spacing-2xl);
+}
+
+.policies__eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    background: rgba(0, 122, 255, 0.10);
+    color: var(--accent-color);
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    padding: var(--spacing-xs) var(--spacing-md);
+    border-radius: 999px;
+    margin-bottom: var(--spacing-md);
+}
+
+.policies__title {
+    font-size: var(--font-size-4xl);
+    color: var(--text-dark);
+    margin-bottom: var(--spacing-sm);
+}
+
+.policies__subtitle {
+    color: var(--text-light);
+    font-size: var(--font-size-lg);
+    margin-bottom: 0;
+}
+
+/* Document card */
+.policies__card {
+    background: var(--white);
+    border: 1px solid var(--medium-gray);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-lg);
+    overflow: hidden;
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+/* Toolbar */
+.policies__toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--spacing-md);
+    flex-wrap: wrap;
+    padding: var(--spacing-lg) var(--spacing-xl);
+    border-bottom: 1px solid var(--medium-gray);
+    background: rgba(242, 242, 247, 0.6);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+}
+
+.policies__doc {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+}
+
+.policies__doc-icon {
+    font-size: 2rem;
+    color: #e2342b;
+}
+
+.policies__doc-meta {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.3;
+}
+
+.policies__doc-name {
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+.policies__doc-info {
+    font-size: var(--font-size-sm);
+    color: var(--text-light);
+}
+
+.policies__actions {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    flex-wrap: wrap;
+}
+
+.policies__actions--center {
+    justify-content: center;
+}
+
+.policies__btn {
+    min-height: 44px;
+}
+
+/* PDF viewer */
+.policies__viewer {
+    background: #525659;
+}
+
+.policies__frame {
+    display: block;
+    width: 100%;
+    height: 80vh;
+    min-height: 600px;
+    border: 0;
+}
+
+/* Fallback (browsers that can't embed PDFs) */
+.policies__fallback {
+    background: var(--white);
+    text-align: center;
+    padding: var(--spacing-3xl) var(--spacing-xl);
+}
+
+.policies__fallback-icon {
+    font-size: 3rem;
+    color: #e2342b;
+    margin-bottom: var(--spacing-md);
+}
+
+.policies__fallback h3 {
+    color: var(--text-dark);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .policies {
+        padding-top: calc(64px + var(--spacing-2xl));
+    }
+    .policies__title {
+        font-size: var(--font-size-3xl);
+    }
+    .policies__toolbar {
+        flex-direction: column;
+        align-items: stretch;
+        padding: var(--spacing-md);
+    }
+    .policies__actions {
+        flex-direction: column;
+    }
+    .policies__btn {
+        width: 100%;
+    }
+    .policies__frame {
+        height: 70vh;
+        min-height: 480px;
+    }
+}
