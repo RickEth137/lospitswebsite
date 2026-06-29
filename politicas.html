@@ -46,6 +46,9 @@
                     <a href="politicas.html" class="nav__link nav__link--active">Políticas</a>
                 </li>
                 <li class="nav__item">
+                    <a href="#" class="nav__link" id="ethics-channel-btn">Canal de Ética</a>
+                </li>
+                <li class="nav__item">
                     <a href="index.html" class="nav__link" id="customer-service-link">Atención a clientes</a>
                 </li>
                 <li class="nav__item nav__item--mobile-only">
@@ -149,6 +152,7 @@
                         <li><a href="index.html#tecnologia" class="footer__link">Tecnología</a></li>
                         <li><a href="index.html#contacto" class="footer__link">Contacto</a></li>
                         <li><a href="politicas.html" class="footer__link">Políticas</a></li>
+                        <li><a href="#" class="footer__link" id="ethics-channel-btn-footer">Canal de Ética</a></li>
                     </ul>
                 </div>
 
@@ -171,8 +175,70 @@
         </div>
     </footer>
 
+    <!-- Ethics Channel Modal -->
+    <div class="modal" id="ethics-channel-modal" style="display: none;">
+        <div class="modal__overlay" id="ethics-modal-overlay">
+            <div class="modal__content">
+                <button class="modal__close" id="ethics-modal-close">
+                    <i class="fas fa-times"></i>
+                </button>
+
+                <h3 class="modal__title">Canal de Ética</h3>
+                <p class="modal__subtitle">Comparte un comentario, queja, sugerencia o denuncia</p>
+
+                <form class="modal__form" action="https://formspree.io/f/mdkwoqry" method="POST">
+                    <div class="form__group">
+                        <select name="report_type" class="form__select" required>
+                            <option value="" disabled selected>Tipo de mensaje *</option>
+                            <option value="Comentario">Comentario</option>
+                            <option value="Queja">Queja</option>
+                            <option value="Sugerencia">Sugerencia</option>
+                            <option value="Denuncia">Denuncia</option>
+                            <option value="Otro">Otro</option>
+                        </select>
+                    </div>
+
+                    <div class="form__group">
+                        <select name="relationship" class="form__select">
+                            <option value="" disabled selected>¿Cómo te relacionas con LOS PITS? (opcional)</option>
+                            <option value="Colaborador">Colaborador</option>
+                            <option value="Proveedor">Proveedor</option>
+                            <option value="Cliente">Cliente</option>
+                            <option value="Otro">Otro</option>
+                        </select>
+                    </div>
+
+                    <div class="form__group">
+                        <input type="text" name="name" class="form__input" placeholder="Nombre completo (opcional)">
+                    </div>
+
+                    <div class="form__group">
+                        <input type="email" name="email" class="form__input" placeholder="Correo electrónico (opcional)">
+                    </div>
+
+                    <div class="form__group">
+                        <input type="tel" name="phone" class="form__input" placeholder="Teléfono (opcional)">
+                    </div>
+
+                    <div class="form__group">
+                        <textarea name="message" class="form__textarea" placeholder="Describe tu comentario, queja, sugerencia o denuncia" rows="5" required></textarea>
+                    </div>
+
+                    <!-- Hidden fields to identify form source -->
+                    <input type="hidden" name="_subject" value="Canal de Ética - Los Pits">
+                    <input type="hidden" name="form_type" value="canal_etica">
+
+                    <button type="submit" class="btn btn--primary form__submit">
+                        Enviar Reporte
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
     <script>
-        // Lightweight header + mobile nav behavior for the policies page
+        // Lightweight header + mobile nav + ethics modal behavior for the policies page
         document.addEventListener('DOMContentLoaded', function () {
             const header = document.getElementById('header');
             const navToggle = document.getElementById('nav-toggle');
@@ -189,6 +255,47 @@
                     const open = navMenu.classList.contains('show');
                     icon.classList.toggle('fa-bars', !open);
                     icon.classList.toggle('fa-times', open);
+                });
+            }
+
+            // Ethics Channel modal
+            const modal = document.getElementById('ethics-channel-modal');
+            const modalClose = document.getElementById('ethics-modal-close');
+            const modalOverlay = modal ? modal.querySelector('.modal__overlay') : null;
+            const triggers = [
+                document.getElementById('ethics-channel-btn'),
+                document.getElementById('ethics-channel-btn-footer')
+            ].filter(Boolean);
+
+            function openEthicsModal() {
+                modal.style.display = 'flex';
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+            function closeEthicsModal() {
+                modal.classList.remove('active');
+                setTimeout(function () { modal.style.display = 'none'; }, 300);
+                document.body.style.overflow = '';
+            }
+
+            if (modal) {
+                triggers.forEach(function (t) {
+                    t.addEventListener('click', function (e) {
+                        e.preventDefault();
+                        openEthicsModal();
+                        if (navMenu && navMenu.classList.contains('show')) {
+                            navMenu.classList.remove('show');
+                            const icon = navToggle ? navToggle.querySelector('i') : null;
+                            if (icon) { icon.classList.remove('fa-times'); icon.classList.add('fa-bars'); }
+                        }
+                    });
+                });
+                if (modalClose) modalClose.addEventListener('click', closeEthicsModal);
+                if (modalOverlay) modalOverlay.addEventListener('click', function (e) {
+                    if (e.target === modalOverlay) closeEthicsModal();
+                });
+                document.addEventListener('keydown', function (e) {
+                    if (e.key === 'Escape' && modal.classList.contains('active')) closeEthicsModal();
                 });
             }
         });
